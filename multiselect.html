@@ -1,0 +1,28 @@
+<!doctype <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>随机选取多句话</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <!-- <script src="main.js"></script> -->
+    <script src="random.min.js" defer></script>
+</head>
+
+<body>
+    <textarea rows="20" cols="80" id="inputArea"></textarea>
+    <input type="number" min="1" id="numOutput">
+    <textarea rows="10" cols="80" id="outputArea" disabled></textarea>
+    <button onclick="multiselect()">选取</button>
+    <script>
+        function multiselect() {
+            var lines = inputArea.value.split('\n');
+            lines = Random.sample(Random.engines.browserCrypto, lines, +numOutput.value);
+            outputArea.value = lines.join('\n');
+        }
+    </script>
+</body>
+
+</html>
