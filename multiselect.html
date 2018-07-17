@@ -12,9 +12,18 @@
 </head>
 
 <body>
-    <textarea rows="20" cols="80" id="inputArea"></textarea>
-    <input type="number" min="1" id="numOutput">
-    <textarea rows="10" cols="80" id="outputArea" disabled></textarea>
+    <div>
+        <p>输入数据，以换行为分界</p>
+        <textarea rows="20" cols="80" id="inputArea"></textarea>
+    </div>
+    <div>
+        <label>多少个输出：</label>
+        <input type="number" min="1" id="numOutput" name="numOutput" value="5">
+    </div>
+    <div>
+        <p>结果</p>
+        <textarea rows="10" cols="80" id="outputArea" disabled></textarea>
+    </div>
     <button onclick="multiselect()">选取</button>
     <script>
         function multiselect() {
