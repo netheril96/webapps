@@ -28,6 +28,7 @@
     <script>
         function multiselect() {
             var lines = inputArea.value.split('\n');
+            lines = lines.filter((l) => !(/^\s*$/.test(l))); // Remove all whitespace only lines.
             lines = Random.sample(Random.engines.browserCrypto, lines, +numOutput.value);
             outputArea.value = lines.join('\n');
         }
